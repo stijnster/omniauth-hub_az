@@ -39,7 +39,7 @@ class Omniauth::HubAz::TokenTest < Minitest::Test
   end
 
   def test_with_missing_roles
-    jwt = generate_jtw({ iss: 'www.hub-az.nl', exp: 10.minutes.from_now.utc.to_i }, { and: 'I' })
+    jwt = generate_jtw(payload: { iss: 'www.hub-az.nl', exp: 10.minutes.from_now.utc.to_i }, headers: { and: 'I' })
 
     token = HubAz::Token.new(jwt, public_key: @rsa.public_key, algorithm: 'RS512')
     assert token.valid?

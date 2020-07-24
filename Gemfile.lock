@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     omniauth-hub_az (0.1.0)
-      activesupport (~> 5.0)
+      activesupport (>= 5.0)
       omniauth-oauth2 (~> 1.6)
 
 GEM
