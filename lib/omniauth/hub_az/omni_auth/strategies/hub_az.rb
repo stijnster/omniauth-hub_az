@@ -29,7 +29,7 @@ module OmniAuth
       def hub_az_token
         return @hub_az_token if defined?(@hub_az_token)
 
-        @hub_az_token = ::HubAz::Token.verify!(access_token.token)
+        @hub_az_token = ::Omniauth::HubAz::Token.verify!(access_token.token)
         fail!(:invalid_credentials, CallbackError.new(:invalid_credentials, 'Invalid JWT token')) unless @hub_az_token.valid?
 
         @hub_az_token
