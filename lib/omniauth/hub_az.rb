@@ -1,4 +1,5 @@
 require "omniauth/hub_az/version"
+require "omniauth/hub_az/omni_auth/strategies/hub_az.rb"
 
 module Omniauth
   module HubAz
