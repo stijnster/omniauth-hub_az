@@ -5,7 +5,7 @@ module Omniauth
 
         private
 
-          def hub_az_token_has_role(role)
+          def hub_az_token_requires_role!(role)
             head 401 unless (hub_az_token.valid? && hub_az_token.has_role?(role))
           end
 
@@ -24,7 +24,6 @@ module Omniauth
 
             @hub_az_jwt_token = request.headers['Authorization'].to_s.split(' ').last
           end
-
       end
     end
   end
