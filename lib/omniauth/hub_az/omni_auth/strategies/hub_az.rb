@@ -1,10 +1,6 @@
-require 'omniauth-oauth2'
-
 module OmniAuth
   module Strategies
     class HubAz < OmniAuth::Strategies::OAuth2
-      attr_reader :hub_az_token
-
       option :name, 'hub_az'
       option :client_options, {:site => 'https://www.hub-az.nl' }
 
@@ -12,7 +8,7 @@ module OmniAuth
 
       info do
         info = {
-          verified?: hub_az_token.verified?,
+          valid?: hub_az_token.valid?,
           roles: hub_az_token.roles
         }
 
@@ -34,7 +30,7 @@ module OmniAuth
         return @hub_az_token if defined?(@hub_az_token)
 
         @hub_az_token = ::HubAz::Token.verify!(access_token.token)
-        fail!(:invalid_credentials, CallbackError.new(:invalid_credentials, 'Invalid JWT token')) unless @hub_az_token.verified?
+        fail!(:invalid_credentials, CallbackError.new(:invalid_credentials, 'Invalid JWT token')) unless @hub_az_token.valid?
 
         @hub_az_token
       end

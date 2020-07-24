@@ -5,11 +5,11 @@ module HubAz
       private
 
         def hub_az_token_has_role(role)
-          head 401 unless (hub_az_token.verified? && hub_az_token.has_role?(role))
+          head 401 unless (hub_az_token.valid? && hub_az_token.has_role?(role))
         end
 
         def valid_hub_az_token_required!
-          head 401 unless hub_az_token.verified?
+          head 401 unless hub_az_token.valid?
         end
 
         def hub_az_token

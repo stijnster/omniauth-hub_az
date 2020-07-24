@@ -8,23 +8,23 @@ module HubAz
     end
 
     def initialize(jwt, public_key: nil, algorithm: nil)
-      public_key = Rails.application.config.hub_az_token[:public_key] if public_key.blank?
-      algorithm = Rails.application.config.hub_az_token[:algorithm] if algorithm.blank?
+      # public_key = Rails.application.config.hub_az_token[:public_key] if public_key.blank?
+      # algorithm = Rails.application.config.hub_az_token[:algorithm] if algorithm.blank?
 
       @decoded = JWT.decode(jwt, public_key, true, algorithm: algorithm)
 
       @payload = ActiveSupport::HashWithIndifferentAccess.new(@decoded[0])
       @header = ActiveSupport::HashWithIndifferentAccess.new(@decoded[1])
 
-      @verified = true
+      @valid = true
     rescue JWT::VerificationError, JWT::ExpiredSignature, JWT::DecodeError, JWT::IncorrectAlgorithm
       @payload = {}
       @header = {}
-      @verified = false
+      @valid = false
     end
 
-    def verified?
-      !!@verified
+    def valid?
+      !!@valid
     end
 
     def roles
