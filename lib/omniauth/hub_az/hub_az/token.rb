@@ -9,8 +9,8 @@ module Omniauth
       end
 
       def initialize(jwt, public_key: nil, algorithm: nil)
-        # public_key = Rails.application.config.hub_az_token[:public_key] if public_key.blank?
-        # algorithm = Rails.application.config.hub_az_token[:algorithm] if algorithm.blank?
+        public_key = Omniauth::HubAz.public_key if public_key.blank?
+        algorithm = Omniauth::HubAz.algorithm if algorithm.blank?
 
         @decoded = JWT.decode(jwt, public_key, true, algorithm: algorithm)
 
