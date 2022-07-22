@@ -27,6 +27,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'omniauth-oauth2', '~> 1.6'
+  spec.add_dependency 'omniauth-oauth2', '~> 1.8'
   spec.add_dependency 'activesupport', '>= 5.0'
 end
