@@ -37,7 +37,7 @@ GEM
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
-    rack (2.2.3)
+    rack (2.2.4)
     rake (12.3.3)
     thread_safe (0.3.6)
     tzinfo (1.2.10)
