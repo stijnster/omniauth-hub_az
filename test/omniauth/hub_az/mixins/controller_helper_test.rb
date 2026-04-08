@@ -40,7 +40,7 @@ class Omniauth::HubAz::Mixins::ControllerHelperTest  < Minitest::Test
   end
 
   def test_with_valid_bearer_header
-    rsa = OpenSSL::PKey::RSA.generate(1024)
+    rsa = OpenSSL::PKey::RSA.generate(2048)
     Omniauth::HubAz.setup do |config|
       config.public_key = rsa.public_key
       config.algorithm = 'RS512'

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Omniauth::HubAz::TokenTest < Minitest::Test
   def setup
-    @rsa = OpenSSL::PKey::RSA.generate(1024)
+    @rsa = OpenSSL::PKey::RSA.generate(2048)
     Omniauth::HubAz.setup do |config|
       config.public_key = @rsa.public_key
       config.algorithm = 'RS512'
