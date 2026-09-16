@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-hub_az (0.1.7)
+    omniauth-hub_az (0.1.8)
       activesupport (>= 5.0)
       omniauth-oauth2 (~> 1.8)
 
@@ -97,10 +97,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  json (~> 2.21.2)
   minitest
   minitest-reporters
-  oauth2 (>= 2.0.22)
   omniauth-hub_az!
   rake
 
