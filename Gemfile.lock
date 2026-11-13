@@ -38,7 +38,7 @@ GEM
       logger
     faraday-net_http (3.4.4)
       net-http (~> 0.5)
-    hashie (5.1.0)
+    hashie (5.2.0)
       logger
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
@@ -68,11 +68,11 @@ GEM
       rack (>= 1.2, < 4)
       snaky_hash (~> 2.0, >= 2.0.7)
       version_gem (~> 1.1, >= 1.1.14)
-    omniauth (2.1.4)
-      hashie (>= 3.4.6)
+    omniauth (2.3.1)
+      hashie (>= 3.5.2)
       logger
-      rack (>= 2.2.3)
-      rack-protection
+      rack (>= 2.2.8)
+      rack-protection (>= 2.2.0)
     omniauth-oauth2 (1.9.0)
       oauth2 (>= 2.0.2, < 3)
       omniauth (~> 2.0)
